@@ -1,9 +1,3 @@
-//
-//  WeatherForecastView.swift
-//  Forecast
-//
-//  Created by Renan Diniz on 13/02/25.
-//
 import SwiftUI
 
 struct WeatherForecastView: View {
@@ -31,12 +25,17 @@ struct WeatherForecastView: View {
                         .background(RoundedRectangle(cornerRadius: 10).stroke())
                 }
 
-                // Weather List
+                // Weather List with NavigationLink
                 List(viewModel.weatherData) { forecast in
-                    WeatherListItemView(forecast: forecast)
-                        .listRowInsets(EdgeInsets()) // Remove default padding
-                        .listRowBackground(Color.clear)
-                        .listRowSeparator(.hidden)
+                    ZStack {
+                        WeatherListItemView(forecast: forecast)
+//                            .background(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
+                        NavigationLink("", destination: DetailedWeatherView(viewModel: DetailedWeatherViewModel(dayOfWeek: forecast.dayOfWeek)))
+                            .opacity(0) // Invisible but still functional
+                    }
+                    .listRowSeparator(.hidden)
+//                    .listRowInsets(EdgeInsets()) // Remove default padding
+                    .listRowBackground(Color.clear)
                 }
                 .listStyle(PlainListStyle())
 
