@@ -1,11 +1,3 @@
-//
-//  DetailedWeatherView.swift
-//  Forecast
-//
-//  Created by Renan Diniz on 13/02/25.
-//
-
-
 import SwiftUI
 
 struct DetailedWeatherView: View {
@@ -34,9 +26,6 @@ struct DetailedWeatherView: View {
             .navigationBarTitle(viewModel.dayOfWeek, displayMode: .inline)
             .navigationBarBackButtonHidden(false)
             .padding()
-        }
-        .task {
-            await viewModel.fetchDetailedWeather()
         }
     }
 }

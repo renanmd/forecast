@@ -8,7 +8,7 @@ struct WeatherListItemView: View {
             Text(forecast.dayOfWeek)
                 .font(.headline)
 
-            Text(forecast.dateFormatted)
+            Text(forecast.date)
                 .font(.subheadline)
                 .foregroundColor(.gray)
         }

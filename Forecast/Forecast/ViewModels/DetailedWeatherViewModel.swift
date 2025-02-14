@@ -1,11 +1,3 @@
-//
-//  DetailedWeatherViewModel.swift
-//  Forecast
-//
-//  Created by Renan Diniz on 13/02/25.
-//
-
-
 import Foundation
 
 final class DetailedWeatherViewModel: ObservableObject {
@@ -25,13 +17,5 @@ final class DetailedWeatherViewModel: ObservableObject {
 
     init(dayOfWeek: String) {
         self.dayOfWeek = dayOfWeek
-    }
-
-    func fetchDetailedWeather() async {
-        // Mocked API response
-        await Task.sleep(1_000_000_000) // Simulate delay
-        DispatchQueue.main.async {
-            // Populate with mocked data (already set above)
-        }
     }
 }
