@@ -38,7 +38,20 @@ struct UVVisibilityAirPressureVIew: View {
             }
         }
         .padding()
-        .background(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1).background(RoundedRectangle(cornerRadius: 10).fill(Color.white)))
+        .background(
+            RoundedRectangle(
+                cornerRadius: 10
+            ).stroke(
+                Color.gray,
+                lineWidth: 1
+            ).background(
+                RoundedRectangle(
+                    cornerRadius: 10
+                ).fill(
+                    Color.white
+                )
+            )
+        )
         .padding(.vertical, 8)
     }
 }

@@ -15,9 +15,9 @@ struct WindSpeedView: View {
             Text("Wind direction")
                 .font(.caption)
             VStack {
-                Image(systemName: "arrow.up") // Arrow icon from SF Symbols
-                    .font(.system(size: 60)) // Large size
-                    .rotationEffect(angleForDirection(windDirection)) // Rotate based on direction
+                Image(systemName: "arrow.up")
+                    .font(.system(size: 60))
+                    .rotationEffect(angleForDirection(windDirection))
                     .foregroundColor(.blue)
                 Text(windDirection)
                     .font(.caption)
@@ -25,7 +25,20 @@ struct WindSpeedView: View {
             .frame(maxWidth: .infinity, alignment: .center)
         }
         .padding()
-        .background(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1).background(RoundedRectangle(cornerRadius: 10).fill(Color.white)))
+        .background(
+            RoundedRectangle(
+                cornerRadius: 10
+            ).stroke(
+                Color.gray,
+                lineWidth: 1
+            ).background(
+                RoundedRectangle(
+                    cornerRadius: 10
+                ).fill(
+                    Color.white
+                )
+            )
+        )
         .padding(.vertical, 8)
     }
     

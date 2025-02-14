@@ -26,11 +26,24 @@ final class WeatherForecastViewModel: ObservableObject {
     }
 
     private func mapToForecast(_ dailyData: [Daily]) -> [WeatherForecast] {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE"
+        
         return dailyData.enumerated().map { index, daily in
             WeatherForecast(
-                dayOfWeek: DateFormatter.localizedString(from: Calendar.current.date(byAdding: .day, value: index, to: Date()) ?? Date(), dateStyle: .full, timeStyle: .none),
+                dayOfWeek: formatter.string(from: Calendar.current.date(byAdding: .day, value: index, to: Date()) ?? Date()),
                 date: daily.values.sunriseTime // Example usage of the API data
             )
         }
     }
+    
+    func formatDate(_ dateString: String) -> String {
+            let inputFormatter = ISO8601DateFormatter()
+            guard let date = inputFormatter.date(from: dateString) else { return dateString }
+            
+            let outputFormatter = DateFormatter()
+            outputFormatter.dateFormat = "dd.MM.yyyy"
+            
+            return outputFormatter.string(from: date)
+        }
 }

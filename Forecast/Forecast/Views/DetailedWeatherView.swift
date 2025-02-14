@@ -7,8 +7,16 @@ struct DetailedWeatherView: View {
         NavigationView {
             VStack {
                 List {
-                    DayWeatherConditionView(dayHighTemp: "21C", dayCondition: viewModel.weatherCondition, subtitleDayHighTemp: "High value", dayLowTemperature: "10C", subtitleDayLowTemp: "Low value")
-                        .listRowSeparator(.hidden)
+                    DayWeatherConditionView(
+                        dayHighTemp: "21C",
+                        dayCondition: viewModel.weatherCondition,
+                        subtitleDayHighTemp: "High value",
+                        dayLowTemperature: "10C",
+                        subtitleDayLowTemp: "Low value"
+                    )
+                    .listRowSeparator(
+                        .hidden
+                    )
                     
                     ProbabilityRainView(probabilityRain: 9, averageHumidity: 75)
                         .listRowSeparator(.hidden)
